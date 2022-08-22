@@ -23,4 +23,10 @@ async function pdfFormFill(fields:PdfForm) {
   console.log("PDF Created");
 }
 
-export default pdfFormFill
+let aaa = (fields:PdfForm) => {
+  return new Promise( resolve => {
+    pdfFormFill(fields);
+  })
+}
+
+export default aaa

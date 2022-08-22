@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 
 defineProps<{ msg: string }>()
+
 </script>
 
 <template>
@@ -22,8 +23,20 @@ defineProps<{ msg: string }>()
     <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
   </p>
 
-  <el-button type="primary" :icon="'Edit'" circle />
+  <el-button type="primary" @click="toPrint" :icon="'Edit'" circle />
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+export default {
+  name: 'HelloWorld',
+  methods: {
+    toPrint() {
+      this.$router.push({name: 'Print'})
+    }
+  }
+}
+</script>
 
 <style scoped>
 a {

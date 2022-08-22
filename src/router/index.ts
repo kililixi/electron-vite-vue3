@@ -14,6 +14,12 @@ export const constantRoutes = [
         component: () => import('@/Home.vue'),
         name: 'Dashboard',
         meta: { title: '主页', icon: 'dashboard', affix: true }
+      },
+      {
+        path: 'print',
+        component: () => import('@/views/print.vue'),
+        name: 'Print',
+        meta: { title: '打印', icon: 'dashboard', affix: true }
       }
     ]
   },

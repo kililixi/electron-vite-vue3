@@ -2,6 +2,9 @@ import { app, BrowserWindow, shell, ipcMain, dialog } from 'electron'
 import { release } from 'os'
 import { join } from 'path'
 
+import fillForm from "../utils/pdfRender"
+import PdfForm from '../utils/PdfForm'
+
 // Disable GPU Acceleration for Windows 7
 if (release().startsWith('6.1')) app.disableHardwareAcceleration()
 
@@ -123,3 +126,9 @@ ipcMain.handle('open-win', (event, arg) => {
     // childWindow.webContents.openDevTools({ mode: "undocked", activate: true })
   }
 })
+
+ipcMain.on('print', async function (e, data) {
+  let pdfForm = new PdfForm(data.name);
+  await fillForm(pdfForm)
+})
+

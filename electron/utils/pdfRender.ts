@@ -6,10 +6,10 @@ import PdfForm from './PdfForm'
 import { join } from 'path'
 
 console.log(__dirname)
-const fontBytes = fs.readFileSync( join(__dirname, '../../../electron/assets/black.otf'))
-// const fontBytes = fs.readFileSync('/Users/startsi/Downloads/black.otf')
-// const pdfTemplate = fs.readFileSync('/Users/startsi/Downloads/aaaa.pdf')
-const pdfTemplate = fs.readFileSync(join(__dirname, '../../../electron/assets/template.pdf'))
+// const fontBytes = fs.readFileSync( join(__dirname, '../../../electron/assets/black.otf'))
+// const pdfTemplate = fs.readFileSync(join(__dirname, '../../../electron/assets/template.pdf'))
+const fontBytes = fs.readFileSync( join(os.homedir(), 'black.otf') )
+const pdfTemplate = fs.readFileSync( join(os.homedir(), 'template.pdf') )
 
 async function fillPdfForm(fields:PdfForm) {
   

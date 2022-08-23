@@ -128,7 +128,7 @@ ipcMain.handle('open-win', (event, arg) => {
 })
 
 ipcMain.handle('print', async function (e, data) {
-  let pdfForm = new PdfForm(data.name);
+  const pdfForm = new PdfForm(data.name);
   await fillForm(pdfForm)
   console.log('完成创建')
 })

@@ -1,8 +1,12 @@
 <template>
   <el-input v-model="name" />
   <br>
-   <el-button type="primary" @click="print" :icon="'Printer'" />
-   <el-dialog
+  <el-button
+    type="primary"
+    :icon="'Printer'"
+    @click="print"
+  />
+  <el-dialog
     v-model="dialogVisible"
     title="Loading"
     width="50%"
@@ -12,13 +16,13 @@
 </template>
 
 <script lang="ts">
-import {ref} from 'vue'
+import {ref, defineComponent} from 'vue'
 import { ipcRenderer } from 'electron'
-export default {
-  name: 'Print',
-  setup(props) {
-    let name = ref('')
-    let dialogVisible = ref(false)
+export default defineComponent({
+  name: 'PrintComp',
+  setup() {
+    const name = ref('')
+    const dialogVisible = ref(false)
     console.log('__dirname', __dirname)
     return {
       name,
@@ -32,6 +36,6 @@ export default {
         this.dialogVisible = false
       })
     }
-  },
-}
+  }
+})
 </script>

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 
 defineProps<{ msg: string }>()
 
@@ -10,24 +9,40 @@ defineProps<{ msg: string }>()
 
   <p>
     Recommended IDE setup:
-    <a href="https://code.visualstudio.com/" target="_blank">VS Code</a>
+    <a
+      href="https://code.visualstudio.com/"
+      target="_blank"
+    >VS Code</a>
     +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
+    <a
+      href="https://github.com/johnsoncodehk/volar"
+      target="_blank"
+    >Volar</a>
   </p>
 
   <p>
-    <a href="https://vitejs.dev/guide/features.html" target="_blank">
+    <a
+      href="https://vitejs.dev/guide/features.html"
+      target="_blank"
+    >
       Vite Docs
     </a>
     |
-    <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
+    <a
+      href="https://v3.vuejs.org/"
+      target="_blank"
+    >Vue 3 Docs</a>
   </p>
 
-  <el-button type="primary" @click="toPrint" :icon="'Edit'" circle />
+  <el-button
+    type="primary"
+    :icon="'Edit'"
+    circle
+    @click="toPrint"
+  />
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
 export default {
   name: 'HelloWorld',
   methods: {

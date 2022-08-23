@@ -1,4 +1,4 @@
-import { PDFDocument, StandardFonts, rgb, degrees } from "pdf-lib";
+import { PDFDocument } from "pdf-lib";
 import fontkit from "@pdf-lib/fontkit";
 import fs from 'fs'
 import os from 'os'
@@ -28,8 +28,8 @@ async function fillPdfForm(fields:PdfForm) {
   console.log("PDF Created");
 }
 
-let PdfFormFill = async (fields:PdfForm) => {
-    fillPdfForm(fields);
-}
+// const PdfFormFill = async (fields:PdfForm) => {
+//     fillPdfForm(fields);
+// }
 
 export default fillPdfForm

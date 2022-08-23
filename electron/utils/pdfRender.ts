@@ -4,6 +4,7 @@ import fs from 'fs'
 import os from 'os'
 import PdfForm from './PdfForm'
 import { join } from 'path'
+import { print } from "pdf-to-printer";
 
 console.log(__dirname)
 // const fontBytes = fs.readFileSync( join(__dirname, '../../../electron/assets/black.otf'))
@@ -26,6 +27,12 @@ async function fillPdfForm(fields:PdfForm) {
 
   await fs.writeFileSync(join(os.homedir(), 'generatePdf.pdf'), pdfBytes);
   console.log("PDF Created");
+  print(join(os.homedir(), 'generatePdf.pdf'), {
+    printer: 'Generic 36BW-9SeriesPCL',
+    pages: '1'
+  }).then(()=> {
+    console.log('PrintComplete')
+  });
 }
 
 // const PdfFormFill = async (fields:PdfForm) => {

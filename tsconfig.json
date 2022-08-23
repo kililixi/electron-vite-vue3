@@ -9,7 +9,7 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "baseUrl": "./",
-     "noImplicitThis": true,
+    "noImplicitThis": true,
     "strict": true,
     "paths": {
       "@/*": ["src/*"]
@@ -18,7 +18,5 @@
     "skipLibCheck": true,
     "types": ["element-plus/global"]
   },
-  "references": [
-    { "path": "./tsconfig.node.json" }
-  ]
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

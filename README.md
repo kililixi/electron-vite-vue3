@@ -16,7 +16,7 @@
 🌱 Extensible, really simple directory structure  
 💪 Support using Node.js API in Electron-Renderer  
 🔩 Support C/C++ native addons  
-🖥 It's easy to implement multiple windows  
+🖥 It's easy to implement multiple windows
 
 ## Quick Start
 

@@ -5,13 +5,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 export default defineComponent({
-  name: 'App',
+  name: "App",
   mounted() {
-    this.$router.push({name: 'Dashboard'})
-  }
-})
+    const a = {
+      a: "1",
+      b: "2",
+    };
+    this.$router.push({ name: "Dashboard" });
+  },
+});
 </script>
 
 <style>

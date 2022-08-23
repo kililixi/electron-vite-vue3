@@ -1,7 +1,5 @@
 <script setup lang="ts">
-
-defineProps<{ msg: string }>()
-
+defineProps<{ msg: string }>();
 </script>
 
 <template>
@@ -9,48 +7,31 @@ defineProps<{ msg: string }>()
 
   <p>
     Recommended IDE setup:
-    <a
-      href="https://code.visualstudio.com/"
-      target="_blank"
-    >VS Code</a>
+    <a href="https://code.visualstudio.com/" target="_blank">VS Code</a>
     +
-    <a
-      href="https://github.com/johnsoncodehk/volar"
-      target="_blank"
-    >Volar</a>
+    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
   </p>
 
   <p>
-    <a
-      href="https://vitejs.dev/guide/features.html"
-      target="_blank"
-    >
+    <a href="https://vitejs.dev/guide/features.html" target="_blank">
       Vite Docs
     </a>
     |
-    <a
-      href="https://v3.vuejs.org/"
-      target="_blank"
-    >Vue 3 Docs</a>
+    <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
   </p>
 
-  <el-button
-    type="primary"
-    :icon="'Edit'"
-    circle
-    @click="toPrint"
-  />
+  <el-button type="primary" :icon="'Edit'" circle @click="toPrint" />
 </template>
 
 <script lang="ts">
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   methods: {
     toPrint() {
-      this.$router.push({name: 'Print'})
-    }
-  }
-}
+      this.$router.push({ name: "Print" });
+    },
+  },
+};
 </script>
 
 <style scoped>

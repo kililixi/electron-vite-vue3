@@ -1,12 +1,17 @@
 import { PDFDocument, StandardFonts, rgb, degrees } from "pdf-lib";
 import fontkit from "@pdf-lib/fontkit";
-import * as fs from 'fs/promises'
+import fs from 'fs'
+import os from 'os'
 import PdfForm from './PdfForm'
+import { join } from 'path'
 
-const fontBytes = await fs.readFile('../font/black.otf')
-const pdfTemplate = await fs.readFile('/Users/startsi/Downloads/aaaa.pdf')
+console.log(__dirname)
+const fontBytes = fs.readFileSync( join(__dirname, '../../../electron/assets/black.otf'))
+// const fontBytes = fs.readFileSync('/Users/startsi/Downloads/black.otf')
+// const pdfTemplate = fs.readFileSync('/Users/startsi/Downloads/aaaa.pdf')
+const pdfTemplate = fs.readFileSync(join(__dirname, '../../../electron/assets/template.pdf'))
 
-async function pdfFormFill(fields:PdfForm) {
+async function fillPdfForm(fields:PdfForm) {
   
   const pdfDoc = await PDFDocument.load(pdfTemplate);
   pdfDoc.registerFontkit(fontkit)
@@ -19,14 +24,12 @@ async function pdfFormFill(fields:PdfForm) {
   form.updateFieldAppearances(wsblackotf);
   const pdfBytes = await pdfDoc.save();
 
-  await fs.writeFile('/Users/startsi/Downloads/aaaa22.pdf', pdfBytes);
+  await fs.writeFileSync(join(os.homedir(), 'generatePdf.pdf'), pdfBytes);
   console.log("PDF Created");
 }
 
-let aaa = (fields:PdfForm) => {
-  return new Promise( resolve => {
-    pdfFormFill(fields);
-  })
+let PdfFormFill = async (fields:PdfForm) => {
+    fillPdfForm(fields);
 }
 
-export default aaa
+export default fillPdfForm

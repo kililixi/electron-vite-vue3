@@ -7,23 +7,23 @@ import { join } from 'path'
 import { print } from 'pdf-to-printer'
 
 console.log(__dirname)
-console.log(join(__dirname, './assets/black.otf'))
-
 const dbs = join(process.cwd(), 'resources')
-
 console.log(dbs)
-// console.log(import.meta.env)
 
 let fontBytes
 let pdfTemplate
+
+// 如果是开发模式
 if (import.meta.env.DEV) {
-  fontBytes = fs.readFileSync(join(os.homedir(), 'black.otf'))
-  pdfTemplate = fs.readFileSync(join(os.homedir(), 'template.pdf'))
-} else {
   fontBytes = fs.readFileSync(
-    join(process.env.ROOT + '', './resources/assets/black.otf')
+    join(process.cwd(), './electron/assets/black.otf')
   )
-  pdfTemplate = fs.readFileSync(join(__dirname, '../../assets/template.pdf'))
+  pdfTemplate = fs.readFileSync(
+    join(process.cwd(), './electron/assets/template.pdf')
+  )
+} else {
+  fontBytes = fs.readFileSync(join(dbs, './assets/black.otf'))
+  pdfTemplate = fs.readFileSync(join(dbs, './assets/template.pdf'))
 }
 
 async function fillPdfForm(fields: PdfForm): Promise<string> {

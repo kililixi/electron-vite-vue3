@@ -16,7 +16,7 @@
     },
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
-    "types": ["element-plus/global"]
+    "types": ["element-plus/global", "vite/client"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]

@@ -8,14 +8,23 @@ import { print } from 'pdf-to-printer'
 
 console.log(__dirname)
 console.log(join(__dirname, './assets/black.otf'))
-const fontBytes = fs.readFileSync(
-  join(process.env.ROOT + '', './resources/assets/black.otf')
-)
-const pdfTemplate = fs.readFileSync(
-  join(__dirname, '../../assets/template.pdf')
-)
-// const fontBytes = fs.readFileSync(join(os.homedir(), 'black.otf'))
-// const pdfTemplate = fs.readFileSync(join(os.homedir(), 'template.pdf'))
+
+const dbs = join(process.cwd(), 'resources')
+
+console.log(dbs)
+// console.log(import.meta.env)
+
+let fontBytes
+let pdfTemplate
+if (import.meta.env.DEV) {
+  fontBytes = fs.readFileSync(join(os.homedir(), 'black.otf'))
+  pdfTemplate = fs.readFileSync(join(os.homedir(), 'template.pdf'))
+} else {
+  fontBytes = fs.readFileSync(
+    join(process.env.ROOT + '', './resources/assets/black.otf')
+  )
+  pdfTemplate = fs.readFileSync(join(__dirname, '../../assets/template.pdf'))
+}
 
 async function fillPdfForm(fields: PdfForm): Promise<string> {
   const pdfDoc = await PDFDocument.load(pdfTemplate)

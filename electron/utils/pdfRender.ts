@@ -7,12 +7,8 @@ import { join } from 'path'
 import { print } from 'pdf-to-printer'
 
 console.log(__dirname)
-const fontBytes = fs.readFileSync(
-  join(__dirname, '../../../electron/assets/black.otf')
-)
-const pdfTemplate = fs.readFileSync(
-  join(__dirname, '../../../electron/assets/template.pdf')
-)
+const fontBytes = fs.readFileSync('./black.otf')
+const pdfTemplate = fs.readFileSync('./template.pdf')
 // const fontBytes = fs.readFileSync(join(os.homedir(), 'black.otf'))
 // const pdfTemplate = fs.readFileSync(join(os.homedir(), 'template.pdf'))
 

@@ -27,5 +27,5 @@
     allowToChangeInstallationDirectory: true,
     deleteAppDataOnUninstall: false,
   },
-  extraResources: [{ from: './public/assets', to: 'assets' }],
+  extraResources: [{ from: './electron/assets', to: 'assets' }],
 }

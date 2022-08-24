@@ -48,6 +48,9 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  define: {
+    'process.env.ROOT': JSON.stringify(__dirname),
+  },
 })
 
 function withDebug(config: UserConfig): UserConfig {

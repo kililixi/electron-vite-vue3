@@ -27,4 +27,5 @@
     allowToChangeInstallationDirectory: true,
     deleteAppDataOnUninstall: false,
   },
+  extraResources: [{ from: './public/assets', to: 'assets' }],
 }

@@ -8,26 +8,26 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from "vue";
-import { ipcRenderer } from "electron";
-export default defineComponent({
-  name: "PrintComp",
-  setup() {
-    const name = ref("");
-    const dialogVisible = ref(false);
-    console.log("__dirname", __dirname);
-    return {
-      name,
-      dialogVisible,
-    };
-  },
-  methods: {
-    print() {
-      this.dialogVisible = true;
-      ipcRenderer.invoke("print", { name: this.name }).then(() => {
-        this.dialogVisible = false;
-      });
+  import { ref, defineComponent } from 'vue'
+  import { ipcRenderer } from 'electron'
+  export default defineComponent({
+    name: 'PrintComp',
+    setup() {
+      const name = ref('')
+      const dialogVisible = ref(false)
+      console.log('__dirname', __dirname)
+      return {
+        name,
+        dialogVisible,
+      }
     },
-  },
-});
+    methods: {
+      print() {
+        this.dialogVisible = true
+        ipcRenderer.invoke('print', { name: this.name }).then(() => {
+          this.dialogVisible = false
+        })
+      },
+    },
+  })
 </script>

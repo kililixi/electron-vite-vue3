@@ -1,11 +1,11 @@
 class PdfForm {
   // 字段
-  name: string;
+  name: string
 
   // 构造函数
   constructor(name: string) {
-    this.name = name;
+    this.name = name
   }
 }
 
-export default PdfForm;
+export default PdfForm

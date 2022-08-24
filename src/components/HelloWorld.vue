@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps<{ msg: string }>();
+  defineProps<{ msg: string }>()
 </script>
 
 <template>
@@ -24,30 +24,30 @@ defineProps<{ msg: string }>();
 </template>
 
 <script lang="ts">
-export default {
-  name: "HelloWorld",
-  methods: {
-    toPrint() {
-      this.$router.push({ name: "Print" });
+  export default {
+    name: 'HelloWorld',
+    methods: {
+      toPrint() {
+        this.$router.push({ name: 'Print' })
+      },
     },
-  },
-};
+  }
 </script>
 
 <style scoped>
-a {
-  color: #42b983;
-}
+  a {
+    color: #42b983;
+  }
 
-label {
-  margin: 0 0.5em;
-  font-weight: bold;
-}
+  label {
+    margin: 0 0.5em;
+    font-weight: bold;
+  }
 
-code {
-  background-color: #eee;
-  padding: 2px 4px;
-  border-radius: 4px;
-  color: #304455;
-}
+  code {
+    background-color: #eee;
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: #304455;
+  }
 </style>

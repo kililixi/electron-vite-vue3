@@ -2,24 +2,24 @@
  * @see https://www.electron.build/configuration/configuration
  */
 {
-  appId: "YourAppID",
+  appId: 'YourAppID',
   asar: true,
   directories: {
-    output: "release/${version}",
+    output: 'release/${version}',
   },
-  files: ["dist"],
+  files: ['dist'],
   mac: {
-    artifactName: "${productName}_${version}.${ext}",
-    target: ["dmg"],
+    artifactName: '${productName}_${version}.${ext}',
+    target: ['dmg'],
   },
   win: {
     target: [
       {
-        target: "nsis",
-        arch: ["x64"],
+        target: 'nsis',
+        arch: ['x64'],
       },
     ],
-    artifactName: "${productName}_${version}.${ext}",
+    artifactName: '${productName}_${version}.${ext}',
   },
   nsis: {
     oneClick: false,

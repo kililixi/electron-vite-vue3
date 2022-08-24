@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-export default {
-  name: "LayoutComp",
-};
+  export default {
+    name: 'LayoutComp',
+  }
 </script>

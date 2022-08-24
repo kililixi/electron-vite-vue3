@@ -9,10 +9,6 @@
   export default defineComponent({
     name: 'App',
     mounted() {
-      const a = {
-        a: '1',
-        b: '2',
-      }
       this.$router.push({ name: 'Dashboard' })
     },
   })

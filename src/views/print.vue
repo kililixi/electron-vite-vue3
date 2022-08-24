@@ -8,6 +8,7 @@
 </template>
 
 <script lang="ts">
+  import { ElMessageBox } from 'element-plus'
   import { ref, defineComponent } from 'vue'
   import { ipcRenderer } from 'electron'
   export default defineComponent({
@@ -24,9 +25,21 @@
     methods: {
       print() {
         this.dialogVisible = true
-        ipcRenderer.invoke('print', { name: this.name }).then(() => {
-          this.dialogVisible = false
-        })
+        ipcRenderer
+          .invoke('print', { name: this.name })
+          .then((result) => {
+            ElMessageBox.alert(result, '成功', {
+              confirmButtonText: '关闭',
+            })
+          })
+          .catch((err) => {
+            ElMessageBox.alert(err, '失败', {
+              confirmButtonText: '关闭',
+            })
+          })
+          .finally(() => {
+            this.dialogVisible = false
+          })
       },
     },
   })

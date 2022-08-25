@@ -1,4 +1,5 @@
 <template>
+  <img style="height: 140px" src="../assets/electron.png" />
   <video
     id="video"
     style="width: 100%"

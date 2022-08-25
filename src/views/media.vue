@@ -1,11 +1,6 @@
 <template>
   <img style="height: 140px" src="../assets/electron.png" />
-  <video
-    id="video"
-    style="width: 100%"
-    src="../assets/videos/PresidentObama.mp4"
-    loop
-  />
+  <video id="video" style="width: 100%" src="/videos/PresidentObama.mp4" loop />
 </template>
 
 <script lang="ts">

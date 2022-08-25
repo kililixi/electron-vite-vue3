@@ -20,7 +20,8 @@
     <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
   </p>
 
-  <el-button type="primary" :icon="'Edit'" circle @click="toPrint" />
+  <el-button type="primary" :icon="'Printer'" circle @click="toPrint" />
+  <el-button type="primary" :icon="'Film'" circle @click="toMedia" />
 </template>
 
 <script lang="ts">
@@ -29,6 +30,9 @@
     methods: {
       toPrint() {
         this.$router.push({ name: 'Print' })
+      },
+      toMedia() {
+        this.$router.push({ name: 'Media' })
       },
     },
   }

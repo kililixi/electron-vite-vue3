@@ -2,8 +2,9 @@ import { app, BrowserWindow, shell, ipcMain, dialog } from 'electron'
 import { release } from 'os'
 import { join } from 'path'
 
-import fillForm from '../utils/pdfRender'
-import PdfForm from '../utils/PdfForm'
+// import fillForm from '../utils/pdfRender'
+// import PdfForm from '../utils/PdfForm'
+import printPdf from '../utils/PrintPdf'
 
 // Disable GPU Acceleration for Windows 7
 if (release().startsWith('6.1')) app.disableHardwareAcceleration()
@@ -125,8 +126,9 @@ ipcMain.handle('open-win', (event, arg) => {
 })
 
 ipcMain.handle('print', async function (e, data) {
-  const pdfForm = new PdfForm(data.name)
-  await fillForm(pdfForm)
-  console.log('完成创建、打印')
+  // const pdfForm = new PdfForm(data.name)
+  // await fillForm(pdfForm)
+  await printPdf()
+  console.log('完成打印')
   return '打印完成'
 })

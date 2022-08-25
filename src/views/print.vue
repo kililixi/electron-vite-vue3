@@ -11,6 +11,9 @@
   import { ElMessageBox } from 'element-plus'
   import { ref, defineComponent } from 'vue'
   import { ipcRenderer } from 'electron'
+  import PdfForm from '@/utils/PdfForm'
+  import fillForm from '@/utils/PdfFillForm'
+
   export default defineComponent({
     name: 'PrintComp',
     setup() {
@@ -23,10 +26,13 @@
       }
     },
     methods: {
-      print() {
+      async print() {
         this.dialogVisible = true
+        const pdfForm = new PdfForm(this.name)
+        await fillForm(pdfForm)
+        // 调用主进程开始打印
         ipcRenderer
-          .invoke('print', { name: this.name })
+          .invoke('print')
           .then((result) => {
             ElMessageBox.alert(result, '成功', {
               confirmButtonText: '关闭',

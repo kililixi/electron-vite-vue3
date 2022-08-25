@@ -21,6 +21,12 @@ export const constantRoutes = [
         name: 'Print',
         meta: { title: '打印', icon: 'dashboard', affix: true },
       },
+      {
+        path: 'media',
+        component: () => import('@/views/media.vue'),
+        name: 'Media',
+        meta: { title: '多媒体', icon: 'dashboard', affix: true },
+      },
     ],
   },
 ]

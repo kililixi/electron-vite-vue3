@@ -6,4 +6,4 @@ if (import.meta.env.DEV) {
 } else {
   videoPrefixPath = join(__dirname, 'videos')
 }
-export default videoPrefixPath
+export { videoPrefixPath }

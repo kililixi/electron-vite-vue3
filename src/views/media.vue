@@ -5,16 +5,14 @@
 
 <script lang="ts">
   import { defineComponent } from 'vue'
-  import { join } from 'path'
-  import videoPrefix from '@/utils/VideoUrlUtil'
+  import { videoPrefixPath } from '@/utils/VideoUrlUtil'
 
-  // const publicPath = join(__dirname, import.meta.env.PROD ? '' : '../public')
-  console.log('videoPrefix', videoPrefix)
+  console.log('videoPrefix', videoPrefixPath)
   export default defineComponent({
     name: 'MediaComp',
     data() {
       return {
-        videoUrl: videoPrefix + '/PresidentObama.mp4',
+        videoUrl: videoPrefixPath + '/PresidentObama.mp4',
       }
     },
     mounted() {
